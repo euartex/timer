@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  div(class='row')
+    h1= title
+    hr
+    div(class='col-sm-6')
+      p 
+       b Cash: 
+       span(class='text-success') #{DefaultCash}#{CurrencyName}
+      p Current Multiplier: 
+        span(class='multiplier',id='multiplier') 1.00x
+    div(class='col-sm-6')
+      form(action='',method='post')
+        div.form-group
+          label(for='last_bets') Last Bets:
+          textarea(class='form-control',name='last_bets',id='last_bets')
+  div(class='row')
+    hr
+    form(action='/',method='post',class='form-horizontal',id='place-bet-form')
+      div.form-group
+        label(for='amount',class='col-sm-2 control-label') Amount:
+        div.col-sm-10
+          input(id='amount',type='text',value='0.01',placeholder='0.01',name='amount',class='form-control')
+      div.form-group
+        label(for='autoCashOut',class='col-sm-2 control-label') Auto cash-out at:
+        div.col-sm-10
+          input(id='autoCashOut',type='text',value='1000',placeholder='1000',name='autoCashOut',class='form-control')
+      div.form-group
+        div(class='col-sm-offset-2 col-sm-10')
+          input(type='submit',value='Place Bet',class='btn btn-success btn-lg')            
+    
+        

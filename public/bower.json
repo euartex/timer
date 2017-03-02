@@ -1,0 +1,22 @@
+{
+  "name": "fakegamblingcrash",
+  "authors": [
+    "VCP <vcp@ukr.net>"
+  ],
+  "description": "fake gambling crash",
+  "main": "",
+  "keywords": [
+    "fake",
+    "gambling",
+    "crash"
+  ],
+  "license": "MIT",
+  "homepage": "http://vcp.pp.ua",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
