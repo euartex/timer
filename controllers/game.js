@@ -56,7 +56,18 @@ var Game = {
         this.client = client;
         this.multiplier = 1;
         this.bet = parseFloat(data.amount);
-        this.timer();
+
+        if (this.checkBalance())
+            this.timer();
+        else
+            this.client.emit('action:lowBalance', {
+                lastBet: this.lastBet,
+                balance: _decimal(this.balance, 2)
+            });
+    },
+
+    checkBalance: function() {
+        if (this.balance >= this.bet) return true;
     },
 
     cashout: function () {

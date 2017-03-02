@@ -1,5 +1,5 @@
 jQuery(document).ready(function () {
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('http://192.168.88.31:3000');
 
     var form = jQuery('#place-bet-form');
     if( form.data('status') === undefined)
@@ -50,6 +50,13 @@ jQuery(document).ready(function () {
     socket.on('action:cashout', function(data){
         console.log('Cashout');
         updateData(data);
+    });
+
+    socket.on('action:lowBalance', function(data){
+        console.log('Low balance');
+        jQuery('#place-bet-form input[type=submit]').val('Place Bet');
+        form.data('status', false);
+        alert('You have low balance to make this bet');
     });
 
 });
