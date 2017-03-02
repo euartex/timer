@@ -5,16 +5,20 @@ block content
     h1= title
     hr
     div(class='col-sm-6')
-      p 
-       b Cash: 
-       span(class='text-success') #{DefaultCash}#{CurrencyName}
-      p Current Multiplier: 
+      p
+        b Cash:
+        span(class='text-success') #{DefaultCash}#{CurrencyName}
+      p Current Multiplier:
         span(class='multiplier',id='multiplier') 1.00x
     div(class='col-sm-6')
       form(action='',method='post')
         div.form-group
           label(for='last_bets') Last Bets:
           textarea(class='form-control',name='last_bets',id='last_bets')
+  div(class='row')
+    div(class='col-sm-6')
+      canvas(id='myChart' width='400' height='400')
+
   div(class='row')
     hr
     form(action='/',method='post',class='form-horizontal',id='place-bet-form')

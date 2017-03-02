@@ -1,8 +1,5 @@
 {
   "name": "fakegamblingcrash",
-  "authors": [
-    "VCP <vcp@ukr.net>"
-  ],
   "description": "fake gambling crash",
   "main": "",
   "keywords": [
@@ -11,12 +8,14 @@
     "crash"
   ],
   "license": "MIT",
-  "homepage": "http://vcp.pp.ua",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "chart.js": "^2.5.0"
+  }
 }

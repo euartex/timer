@@ -28,13 +28,17 @@ var Game = {
 
     balance: 10,
 
+    timestamp: null,
+
     timer: function () {
         this.lastBet = newCrashPoint();
+        this.timestamp = new Date().getTime();
         this.timeout = setInterval(function(){
             this.multiplier += 0.01;
 
             this.client.emit('action:update', {
-                multiplier: this.multiplier
+                multiplier: this.multiplier,
+                timePassed: new Date().getTime() - this.timestamp
             });
 
             if (this.multiplier >= this.lastBet) {
@@ -49,7 +53,7 @@ var Game = {
 
                 console.log('Game finished');
             }
-        }.bind(this),10);
+        }.bind(this), 10);
     },
 
     start: function (client, data) {
