@@ -26,7 +26,7 @@ var Game = {
 
     bet: null,
 
-    balance: 10,
+    balance: 100,
 
     timestamp: null,
 
